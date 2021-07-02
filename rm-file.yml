@@ -1,0 +1,8 @@
+---
+hosts: all
+become: true
+ignore_errors: true
+
+- tasks:
+  - name: remove file older than 45-days
+     raw: find /data/sf-awx-bcp-user/upload/ -type f -delete
